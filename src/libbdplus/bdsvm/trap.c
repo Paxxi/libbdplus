@@ -1199,7 +1199,7 @@ uint32_t TRAP_LoadContentCode(bdplus_config_t *config, uint8_t *FileName, uint32
     file_close(fd);
 
     BD_DEBUG(DBG_BDPLUS,"[TRAP] read %"PRId64" bytes. %p-%p\n", rbytes, dst, &dst[rbytes]);
-    *len = rbytes;
+    *len = (uint32_t)rbytes;
 
     return 0;
 }

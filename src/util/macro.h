@@ -70,8 +70,8 @@ static inline void STORE4(void *pv, uint32_t v) {
 //#define STORE8(X, Y) (X)[7]=((Y)&0xff);(X)[6]=(((Y)>>8)&0xff);(X)[5]=(((Y)>>16)&0xff);(X)[4]=(((Y)>>24)&0xff);(X)[3]=(((Y)>>32)&0xff);(X)[2]=(((Y)>>40)&0xff);(X)[1]=(((Y)>>48)&0xff);(X)[0]=(((Y)>>56)&0xff);
 static inline void STORE8(void *pv, uint64_t v) {
   uint8_t *p = pv;
-  STORE4(p + 4, v);
-  STORE4(p,     v >> 32);
+  STORE4(p + 4, (uint32_t)v);
+  STORE4(p,     (uint32_t)(v >> 32));
 }
 
 #define BD_MAX_SSIZE ((int64_t)(((size_t)-1)>>1))

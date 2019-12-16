@@ -128,13 +128,13 @@ static char *_load_fp(BDPLUS_FILE_H *fp, uint32_t *p_size)
         return NULL;
     }
 
-    data      = malloc(size + 1);
+    data      = malloc((size_t)(size + 1));
     if (!data) {
         BD_DEBUG(DBG_FILE, "Out of memory\n");
         return NULL;
     }
 
-    read_size = file_read(fp, (void *)data, size);
+    read_size = file_read(fp, (void *)data, (size_t)size);
 
     if (read_size != size) {
         BD_DEBUG(DBG_FILE, "Error reading file\n");
@@ -145,7 +145,7 @@ static char *_load_fp(BDPLUS_FILE_H *fp, uint32_t *p_size)
     data[size] = 0;
 
     if (p_size) {
-        *p_size = size;
+        *p_size = (uint32_t)size;
     }
 
     return data;

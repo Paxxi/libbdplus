@@ -15,14 +15,13 @@ m4/lt~obsolete.m4
 autom4te.cache/
 build-aux/
 config.h.in
-config.h
 config.log
 config.status
 configure
 libtool
 .deps
 .libs
-src/libbdplus/bdplus-version.h
 src/bdplus_test
 src/convtab_dump
 stamp-h1
+build*/
