@@ -82,6 +82,11 @@ if(WINDOWS_STORE)
     PRIVATE
       MS_APP
   )
+else()
+  target_link_libraries(libbdplus
+    PRIVATE
+      shell32.lib
+  )
 endif()
   
 target_include_directories(libbdplus
